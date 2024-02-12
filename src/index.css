@@ -1,13 +1,283 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ---------- ANIMATION ---------- */
+
+@keyframes move {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.toggle-container {
+  border-radius: 150px 0 0 100px;
+  transition: all 0.6s ease-in-out;
+  z-index: 1000;
+}
+
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+.toggle-panel {
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+
+/* ---------- CHAT ---------- */
+
+.container {
+  border-radius: 10px;
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.container .sidebar {
+  flex: 0.75;
+}
+.container .chat {
+  flex: 2;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0rem 1rem;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.search {
+  border-bottom: 1px solid black;
+}
+
+.userChat {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.userChat img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.searchForm input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  padding-left: 10px;
+}
+
+.searchForm input::placeholder {
+  color: lightgray;
+}
+
+.chatInfo {
+  height: 50px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}
+
+.chatIcons {
+  display: flex;
+  gap: 15px;
+}
+
+/* ---------- SCROLL ---------- */
+.scroll {
+  overflow-y: auto;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the scrollbar track */
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners */
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+/* ---------- SCROLL ---------- */
+
+.input {
+  height: 50px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputClass {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.send {
+  display: flex;
+  gap: 15px;
+}
+
+.message {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.messageInfo {
+  display: flex;
+  flex-direction: column;
+  color: lightgray;
+}
+
+.messageInfo span {
+  font-weight: 300;
+  font-size: 12px;
+}
+.messageInfo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.messageContent img {
+  width: 50%;
+  border-radius: 10px;
+}
+.messageContent {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.messageContent p {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  max-width: max-content;
+}
+
+/* dont add */
+.owner {
+  flex-direction: row-reverse;
+}
+
+.owner .content {
+  align-items: flex-end;
+}
+
+.owner p {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
 }
