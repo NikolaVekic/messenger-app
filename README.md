@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# React Firebase Messenger App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![304156290-b0fc26f2-d6bc-4860-8aa9-326af21be073](https://github.com/NikolaVekic/messenger-app/assets/55920607/caa50805-2aff-4e5f-a982-ea067d0fd7c9)
+![304156303-511cf96c-18b4-4c0e-9127-f507d4669c3a](https://github.com/NikolaVekic/messenger-app/assets/55920607/ac0bdce4-c50f-4938-a2f1-e9ba43568a14)
 
-## Available Scripts
 
-In the project directory, you can run:
+This project is a chat application built with React and Firebase, designed to demonstrate real-time messaging capabilities. It features user authentication, chat rooms, and real-time chat functionalities.
 
-### `npm start`
+### NOTE
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is still in development, features like video calls and complete mobile responsiveness are still in the works, the core features are enabled, updates will be added over time.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- User authentication with Firebase Auth.
+- Real-time chat using Firebase Firestore.
+- Responsive design for various device sizes.
+- Environment variable configuration for secure Firebase setup.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To get a local copy up and running, follow these simple steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 1. Clone the repository:
+```bash
+git clone https://github.com/your_username_/Project-Name.git
+```
+2. Install NPM packages:
+    
+```bash
+npm install
+```
+    
+3. Create a `.env` file in the root directory and enter your Firebase configuration:
+    
+```
+plaintext
+    REACT_APP_API_KEY=YOUR_API_KEY
+    REACT_APP_AUTH_DOMAIN=YOUR_AUTH_DOMAIN
+    REACT_APP_PROJECT_ID=YOUR_PROJECT_ID
+    REACT_APP_STORAGE_BUCKET=YOUR_STORAGE_BUCKET
+    REACT_APP_MESSAGING_SENDER_ID=YOUR_MESSAGING_SENDER_ID
+    REACT_APP_APP_ID=YOUR_APP_ID
+```
+    
+4. Start the development server:
+    
+```bash
+    npm start
+```
+    
+This runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    
+## Usage
+    
+After signing in, users can select a chat from the list or start a new conversation with other users. Messages are updated in real-time across devices.
+    
+## Contributing
+    
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+    
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+    
+## License
+    
+Distributed under the MIT License. See `LICENSE` for more information.
