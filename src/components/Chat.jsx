@@ -7,7 +7,7 @@ import { MoreHorizontal } from "react-feather";
 import { ChatContext } from "../context/ChatContext";
 
 const Chat = () => {
-  const { data, currentChat } = useContext(ChatContext);
+  const { data } = useContext(ChatContext);
 
   return (
     <div className="flex-[2]">
